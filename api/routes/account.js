@@ -13,6 +13,7 @@ router.post("/movement", function(req, res, next) {
   }
 
   const { value } = req.body;
+
   locked = true;
   addMovement(value)
     .then(movement => {
@@ -32,6 +33,10 @@ router.post("/movement", function(req, res, next) {
 
 router.get("/", (req, res, next) => {
   getAccount().then(account => res.status(200).json(account));
+});
+
+router.get("/balance", (req, res, next) => {
+  getAccount().then(account => res.status(200).json({ balance: account.balance }));
 });
 
 module.exports = router;

@@ -6,7 +6,7 @@ class Account {
   }
 
   addMovement(movement) {
-    this.movements.push(movement);
+    this.movements = [movement, ...this.movements];
     return movement;
   }
 }

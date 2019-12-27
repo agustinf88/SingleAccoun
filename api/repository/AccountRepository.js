@@ -1,6 +1,6 @@
 const Account = require("../model/Account");
 
-const account = new Account("Some Name", 100);
+const account = new Account("Kevin McCallister", 0);
 
 const getAccount = () => Promise.resolve(account);
 const addMovement = movement => {
