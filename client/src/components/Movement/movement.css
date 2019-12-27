@@ -2,11 +2,40 @@
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  cursor: pointer;
 }
 
-.movement-value{
+.movement-value {
   display: flex;
   width: 10%;
   min-width: 100px;
   justify-content: space-between;
+}
+
+.movement__details {
+  display: flex;
+  width: 100%;
+  min-width: 500px;
+  justify-content: space-evenly;
+}
+
+.movement__date {
+  /* background-color: red; */
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  min-width: 200px;
+}
+.movement__amount {
+  display: flex;
+  justify-content: space-between;
+  min-width: 200px;
+  
+}
+
+.positive{
+  color: green;
+}
+.negative{
+  color: red;
 }
