@@ -11,6 +11,7 @@
 
 # How to run Binary Version
 Unzip file in binary folder
+
 `cd api`
 
 `npm start`
