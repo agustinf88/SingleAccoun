@@ -5,14 +5,12 @@ import "./form.css";
 
 import { useDispatch } from "react-redux";
 
-import { postMovement, fetchBalance } from "../../services";
-
 const Form = props => {
   const [value, setValue] = useState(0);
   const dispatch = useDispatch();
   const handleSubmit = e => {
     e.preventDefault();
-    postMovement(dispatch, value).then(movement => fetchBalance(dispatch));
+    dispatch({ type: "ADD_MOVEMENT", payload: { value: value } });
     setValue("");
   };
 

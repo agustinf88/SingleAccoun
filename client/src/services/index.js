@@ -1,10 +1,10 @@
-const fetchAccount = async dispatch =>
+const fetchAccount = () =>
   fetch("http://localhost:8080/account")
     .then(res => res.json())
-    .then(data => dispatch({ type: "GET_ACCOUNT", payload: data }))
+    .then(data => data)
     .catch(err => console.error(err));
 
-const postMovement = async (dispatch, value) =>
+const postMovement = async value =>
   fetch("http://localhost:8080/account/movement", {
     method: "POST",
     headers: {
@@ -21,12 +21,12 @@ const postMovement = async (dispatch, value) =>
         return Promise.reject("Can't add movement");
       }
     })
-    .then(data => data && dispatch({ type: "ADD_MOVEMENT", payload: data }))
-    .catch(err => dispatch({ type: "FORBIDDEN_MOVEMENT", payload: err }));
+    .then(data => data)
+    .catch(err => err);
 
-const fetchBalance = async dispath =>
+const fetchBalance = async () =>
   fetch("http://localhost:8080/account/balance")
     .then(r => r.json())
-    .then(data => dispath({ type: "GET_BALANCE", payload: data.balance }))
+    .then(data => data)
     .catch(err => console.error(err));
 export { fetchAccount, postMovement, fetchBalance };

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAccount } from "../../services";
 import Movements from "../Movements";
 import Snackbar from "../Snackbar";
 import Balance from "../Balance";
@@ -14,7 +13,7 @@ const Page = props => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchAccount(dispatch);
+    dispatch({ type: "FETCH_ACCOUNT" });
   }, [props]);
 
   const name = useSelector(state => state.account.name);

@@ -10,13 +10,13 @@ const initialState = {
 
 const accountReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_MOVEMENT":
+    case "ADD_MOVEMENT_SUCCESS":
       return {
         ...state,
         movements: [{ ...action.payload }, ...state.movements]
       };
 
-    case "GET_ACCOUNT":
+    case "FETCH_ACCOUNT_SUCCESS":
       return {
         ...state,
         name: action.payload.name,
@@ -36,7 +36,7 @@ const accountReducer = (state = initialState, action) => {
         snackbar: { open: false, description: "" }
       };
 
-    case "GET_BALANCE":
+    case "GET_BALANCE_SUCCESS":
       return {
         ...state,
         balance: action.payload
