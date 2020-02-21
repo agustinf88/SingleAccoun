@@ -7,12 +7,14 @@ import reducers from "./reducers";
 
 import Page from "./containers/Page";
 import runActions from "./actions";
-const { createEpicMiddleware } = require("redux-observable");
+import { createEpicMiddleware } from "redux-observable";
 
 const observableMiddleware = createEpicMiddleware();
 
 const store = createStore(reducers, applyMiddleware(observableMiddleware));
+
 runActions(observableMiddleware);
+
 
 const App = () => {
   return (
