@@ -15,7 +15,6 @@ const store = createStore(reducers, applyMiddleware(observableMiddleware));
 
 runActions(observableMiddleware);
 
-
 const App = () => {
   return (
     <Provider store={store}>
